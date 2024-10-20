@@ -21,4 +21,16 @@ public class Animal {
     public void makeSomeNoise() {
         System.out.println("Animal sounds");
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getColor() {
+        return color;
+    }
 }
