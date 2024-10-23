@@ -85,7 +85,7 @@ public class Main {
 
     private static void loadPets() {
         Properties properties = new Properties();
-        try (InputStream input = new FileInputStream("scr/config.properties")) {
+        try (InputStream input = new FileInputStream("src/config.properties")) {
             properties.load(input);
             for (String key : properties.stringPropertyNames()) {
                 String[] values = properties.getProperty(key).split(",");
@@ -108,11 +108,12 @@ public class Main {
         for (Pet pet : pets) {
             properties.put(pet.getClass().getSimpleName() + "_" + pet.getName(), pet.toPropertiesString());
         }
-        try (OutputStream output = new FileOutputStream("scr/config.properties")) {
-            properties.store(output, null);
-            System.out.println("Pets saved");
+
+        try (OutputStream output = new FileOutputStream("src/config.properties")) {
+                properties.store(output, null);
+                System.out.println("Pets saved");
         } catch (IOException e) {
-            System.out.println("Pets not saved" + e.getMessage());
+                System.out.println("Pets not saved" + e.getMessage());
         }
     }
 }
