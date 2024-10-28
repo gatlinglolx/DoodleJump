@@ -21,4 +21,8 @@ public class Pet extends Animal{
     public void makeSomeNoise() {
         System.out.println("Pet sounds");
     }
+
+    public String toPropertiesString() {
+        return String.join(",", getName(), String.valueOf(getAge()), getColor(), breed, String.valueOf(weight));
+    }
 }
