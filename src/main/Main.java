@@ -1,3 +1,5 @@
+package main;
+
 import animals.Pet;
 import animals.Cat;
 import animals.Dog;
@@ -115,5 +117,12 @@ public class Main {
         } catch (IOException e) {
                 System.out.println("Pets not saved" + e.getMessage());
         }
+    }
+
+    public static int summary(int a, int b) {
+        if (b > 0 && a > Integer.MAX_VALUE - b) {
+            throw new ArithmeticException("Integer overflow");
+        }
+        return a + b;
     }
 }
